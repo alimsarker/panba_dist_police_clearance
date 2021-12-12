@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth'); 
+    }
+    
     public function ViewUser(){
         $data['allData'] = User::all();
         return view('backend.users.view_users',$data);
