@@ -41,7 +41,7 @@
 
                    </div>
              <div class="row">
-             <div class="col-md-4">
+             <div class="col-md-4 mt-4">
                               <div class="form-group">
                                 <h5>Assign Officer Name <span class="text-danger">*</span></h5>
                                 <div class="controls">
@@ -72,7 +72,7 @@
                                 </div>
                     </div>
     
-                    <div class="col-md-2">
+                    <div class="col-md-2 mt-4">
                     <div class="form-group" style="padding-top: 25px;">
                           <span class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i> </span> 
                           </div>   		
@@ -103,7 +103,7 @@
 
 
            
-             <div class="col-md-3">
+             <div class="col-md-3 mt-4">
                               <div class="form-group">
                                 <h5>Assign Officer Name <span class="text-danger">*</span></h5>
                                 <div class="controls">
@@ -111,7 +111,7 @@
                                 </div>
     
                     </div>
-             <div class="col-md-3">
+             <div class="col-md-3 mt-4">
                             <div class="form-group">
                             <h5>Assign Officer Rank <span class="text-danger">*</span></h5>
                                 <div class="controls">
@@ -134,7 +134,7 @@
                                 </div>
                     </div>
     
-                    <div class="col-md-2">
+                    <div class="col-md-2 mt-4">
                     <div class="form-group" style="padding-top: 25px;">
                     <span class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i> </span>
                      <span class="btn btn-danger removeeventmore"><i class="fa fa-minus-circle"></i> </span> 

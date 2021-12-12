@@ -1,3 +1,11 @@
+@php
+
+
+$prefix = Request::route()->getPrefix();
+$route = Route::current()->getName();
+@endphp
+
+
 <aside class="main-sidebar">
     <!-- sidebar-->
     <section class="sidebar">	
@@ -25,7 +33,7 @@
           </a>
         </li>  
 		
-        <li class="treeview">
+        <li class="treeview {{ ($prefix == '/users') ? 'active' : '' }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Manage User</span>
@@ -34,94 +42,82 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('user.view') }}"><i class="ti-more"></i>User View</a></li>
-            <li><a href="{{ route('user.add') }}"><i class="ti-more"></i>Add User</a></li>
-            <li><a href="{{ route('user.pass.change') }}"><i class="ti-more"></i>Change Password</a></li>
+            <li  class="{{ ($route == 'user.view') ? 'active' : '' }}"><a href="{{ route('user.view') }}"><i class="ti-more"></i>User View</a></li>
+            <li class="{{ ($route == 'user.add') ? 'active' : '' }}"><a  href="{{ route('user.add') }}"><i class="ti-more"></i>Add User</a></li>
+            <li class="{{ ($route == 'user.pass.change') ? 'active' : '' }}"><a href="{{ route('user.pass.change') }}"><i class="ti-more"></i>Change Password</a></li>
           </ul>
         </li> 
-
-        <li class="treeview">
+ 
+        <li class="treeview  {{ ($prefix == '/police/station/name') ? 'active' : '' }}">
           <a href="#">
-            <i data-feather="message-circle"></i>
+            <i data-feather="list"></i>
             <span>Police Station Name</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('station.name.view') }}"><i class="ti-more"></i>Police Station View</a></li>
-            <li><a href="{{ route('add.ps.name') }}"><i class="ti-more"></i>Add PS Name</a></li>
+            <li  class="{{ ($route == 'station.name.view') ? 'active' : '' }}"><a href="{{ route('station.name.view') }}"><i class="ti-more"></i>Police Station View</a></li>
+            <li  class="{{ ($route == 'add.ps.name') ? 'active' : '' }}"><a href="{{ route('add.ps.name') }}"><i class="ti-more"></i>Add PS Name</a></li>
           </ul>
         </li> 
 
-        <li class="treeview">
+        <li class="treeview  {{ ($prefix == '/assign/officer/name') ? 'active' : '' }}">
           <a href="#">
-            <i data-feather="message-circle"></i>
+            <i data-feather="list"></i>
             <span>Assign Officers Name</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('officer.name.view') }}"><i class="ti-more"></i>Assign Officers View</a></li>
-            <li><a href="{{ route('add.officer.name') }}"><i class="ti-more"></i>Add Assign Officers</a></li>
+            <li  class="{{ ($route == 'officer.name.view') ? 'active' : '' }}"><a href="{{ route('officer.name.view') }}"><i class="ti-more"></i>Assign Officers View</a></li>
+            <li  class="{{ ($route == 'add.officer.name') ? 'active' : '' }}"><a href="{{ route('add.officer.name') }}"><i class="ti-more"></i>Add Assign Officers</a></li>
           </ul>
         </li> 
 
-        <li class="treeview">
+        <li class="treeview {{ ($prefix == '/clearance/data') ? 'active' : '' }}">
           <a href="#">
-            <i data-feather="message-circle"></i>
+            <i data-feather="list"></i>
             <span>Clearance Data Docs</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('clearance.data.view') }}"><i class="ti-more"></i>Clearance Data View</a></li>
-            <li><a href="{{ route('clearance.data.add') }}"><i class="ti-more"></i>Add Clearance Data</a></li>
+            <li  class="{{ ($route == 'clearance.data.view') ? 'active' : '' }}"><a href="{{ route('clearance.data.view') }}"><i class="ti-more"></i>Clearance Data View</a></li>
+            <li  class="{{ ($route == 'clearance.data.add') ? 'active' : '' }}"><a href="{{ route('clearance.data.add') }}"><i class="ti-more"></i>Add Clearance Data</a></li>
           </ul>
         </li> 
 
-        <li class="treeview">
+        <li class="treeview {{ ($prefix == '/clearance/status') ? 'active' : '' }}">
           <a href="#">
-            <i data-feather="message-circle"></i>
+            <i data-feather="list"></i>
             <span>Clearance Status</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('clearance.pending.view') }}"><i class="ti-more"></i>Pending Clearance View</a></li>
-            <li><a href="{{ route('clearance.docs.received.io') }}"><i class="ti-more"></i>I/O Received Docs</a></li>
-            <li><a href="{{ route('io.docs.submit.ps') }}"><i class="ti-more"></i>I/O Submit Docs PS</a></li>
-            <li><a href="{{ route('ps.send.dsb') }}"><i class="ti-more"></i> PS Send DSB</a></li>
-            <li><a href="{{ route('dsb.rece.docs') }}"><i class="ti-more"></i> DSB Received Docs</a></li>
-            <li><a href="{{ route('wait.sp.sign') }}"><i class="ti-more"></i> Waitting For SP Sign</a></li>
-            <li><a href="{{ route('sp.sign.ok') }}"><i class="ti-more"></i>  SP Signed</a></li>
-            <li><a href="{{ route('send.mofa') }}"><i class="ti-more"></i>  send To MOFA</a></li>
-            <li><a href="{{ route('received.from.mofa') }}"><i class="ti-more"></i>  Received From MOFA</a></li>
-            <li><a href="{{ route('waitting.delivered') }}"><i class="ti-more"></i>  Watting For Delivered</a></li>
-            <li><a href="{{ route('docs.delivered') }}"><i class="ti-more"></i> Document Delivered</a></li>
+            <li class="{{ ($route == 'clearance.pending.view') ? 'active' : '' }}"><a href="{{ route('clearance.pending.view') }}"><i class="ti-more"></i>Pending Clearance View</a></li>
+            <li class="{{ ($route == 'clearance.docs.received.io') ? 'active' : '' }}"><a href="{{ route('clearance.docs.received.io') }}"><i class="ti-more"></i>I/O Received Docs</a></li>
+            <li class="{{ ($route == 'io.docs.submit.ps') ? 'active' : '' }}"><a href="{{ route('io.docs.submit.ps') }}"><i class="ti-more"></i>I/O Submit Docs PS</a></li>
+            <li class="{{ ($route == 'ps.send.dsb') ? 'active' : '' }}"><a href="{{ route('ps.send.dsb') }}"><i class="ti-more"></i> PS Send DSB</a></li>
+            <li class="{{ ($route == 'dsb.rece.docs') ? 'active' : '' }}"><a href="{{ route('dsb.rece.docs') }}"><i class="ti-more"></i> DSB Received Docs</a></li>
+            <li class="{{ ($route == 'wait.sp.sign') ? 'active' : '' }}"><a href="{{ route('wait.sp.sign') }}"><i class="ti-more"></i> Waitting For SP Sign</a></li>
+            <li class="{{ ($route == 'sp.sign.ok') ? 'active' : '' }}"><a href="{{ route('sp.sign.ok') }}"><i class="ti-more"></i>  SP Signed</a></li>
+            <li class="{{ ($route == 'send.mofa') ? 'active' : '' }}"><a href="{{ route('send.mofa') }}"><i class="ti-more"></i>  send To MOFA</a></li>
+            <li class="{{ ($route == 'received.from.mofa') ? 'active' : '' }}"><a href="{{ route('received.from.mofa') }}"><i class="ti-more"></i>  Received From MOFA</a></li>
+            <li class="{{ ($route == 'waitting.delivered') ? 'active' : '' }}"><a href="{{ route('waitting.delivered') }}"><i class="ti-more"></i>  Watting For Delivered</a></li>
+            <li class="{{ ($route == 'docs.delivered') ? 'active' : '' }}"><a href="{{ route('docs.delivered') }}"><i class="ti-more"></i> Document Delivered</a></li>
           </ul>
         </li> 
 		  
-        <li class="treeview">
-          <a href="#">
-            <i data-feather="mail"></i> <span>Mailbox</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="mailbox_inbox.html"><i class="ti-more"></i>Inbox</a></li>
-            <li><a href="mailbox_compose.html"><i class="ti-more"></i>Compose</a></li>
-            <li><a href="mailbox_read_mail.html"><i class="ti-more"></i>Read</a></li>
-          </ul>
-        </li>
+        
 		
     		  
 		 
-        <li class="header nav-small-cap">User Interface</li>
+        <!-- <li class="header nav-small-cap">User Interface</li>
 		  
         <li class="treeview">
           <a href="#">
@@ -136,7 +132,7 @@
             <li><a href="components_badges.html"><i class="ti-more"></i>Badge</a></li>
             
           </ul>
-        </li>
+        </li> -->
 		
 		 
 		  

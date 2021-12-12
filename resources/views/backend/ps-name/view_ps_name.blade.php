@@ -5,7 +5,7 @@
 
 
 <section class="content">
-		<div class="col-md-6 col-12">
+		<div class="col-md-9 col-12">
 		  <div class="row">
 			<div class="col-12">
 

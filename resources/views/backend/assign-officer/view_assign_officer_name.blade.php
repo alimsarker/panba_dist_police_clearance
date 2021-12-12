@@ -25,12 +25,12 @@
 					  <table id="example" class="table table-bordered table-hover display nowrap margin-top-10 w-p100">
 					  <thead>
                            <tr>
-                           <th style="width:10%">SL</th>
+                           <th style="width:5%">SL</th>
                          
                            <th>Police Station Name</th>
                          
                             
-                           <th style="width:25%">Action</th>
+                           <th style="width:35%">Action</th>
                          
                        
                          
@@ -59,11 +59,11 @@
 						   </tbody>				  
 						<tfoot>
 							<tr>
-                            <th  width="10%">SL</th>
+                            <th  width="5%">SL</th>
 						
 								<th>Police Station Name</th>
 								
-								<th width="25%"> Action</th>
+								<th width="35%"> Action</th>
 							</tr>
 						</tfoot>
                         
