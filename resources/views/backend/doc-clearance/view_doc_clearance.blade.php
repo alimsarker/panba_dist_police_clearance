@@ -38,6 +38,8 @@
 								<th>Dist.</th>
 								<th>Ref. No</th>
 								<th>Apply Date</th>
+								<th>I/O Name</th>
+								<th>I/O Mobile</th>
                                 <th>Status</th>
 								<th width="15%"> Action</th>
 								
@@ -59,7 +61,8 @@
                                 <td>{{$Applicant->dist}}</td>
 								<td>{{$Applicant->ref_no}}</td>
                                 <td>{{ date('d-m-Y',strtotime( $Applicant->apply_date ))  }}</td>
-                               
+								<td>{{$Applicant->assign_officer->assign_officer_name}}</td>
+								<td>{{$Applicant->assign_officer->assign_officer_cell}}</td>
 									
 									<td>
 								
@@ -73,7 +76,9 @@
 								<td>
                                     <a href="{{ route('clearance.data.edit', $Applicant->id) }}" class="btn btn-rounded btn-info mb-5">Edit</a>
                                    <a href="{{ route('clearance.data.delete', $Applicant->id) }}" class="btn btn-rounded btn-danger mb-5" id="delete">Delete</a>
-                                </td>
+<!-- <a href="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#sms"><i class="icon fa fa-check"></i>Send SMS</a> -->
+                             
+								</td>
 								@endif
 							</tr>
 							@endforeach
@@ -90,6 +95,8 @@
 								<th>Dist.</th>
 								<th>Ref. No</th>
 								<th>Apply Date</th>
+								<th>I/O Name</th>
+								<th>I/O Mobile</th>
                                 <th>Status</th>
                             
 								<th width="15%"> Action</th>

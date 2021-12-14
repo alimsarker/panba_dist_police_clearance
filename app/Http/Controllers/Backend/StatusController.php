@@ -44,10 +44,11 @@ class StatusController extends Controller
      public function DoceIoReceived(){
 
           $recDocIo = ClearanceDocument::with('psstation')->where('status','ReceivedIO')->orderBy('id','DESC')->get();
+          
  
           return view('backend.status.received_docs_io',compact('recDocIo'));
 
-
+ 
      }// End Method
 
  
@@ -82,15 +83,15 @@ class StatusController extends Controller
 
      }// End Method 
 
-      //  Waitting For SP Sir Sign         
+                                    //  Waitting For SP Sir Sign         
 
-      public function WaitSPSign(){
+                                        // public function WaitSPSign(){
 
-          $waitspsign = ClearanceDocument::with('psstation')->where('status','WaitSPsign')->orderBy('id','DESC')->get();
- 
-          return view('backend.status.wait_sp_sign',compact('waitspsign'));
+                                        //      $waitspsign = ClearanceDocument::with('psstation')->where('status','WaitSPsign')->orderBy('id','DESC')->get();
+                                   
+                                        //      return view('backend.status.wait_sp_sign',compact('waitspsign'));
 
-     }// End Method 
+                                        // }// End Method 
 
       //    SP Sir Sign OK        
 
@@ -122,15 +123,15 @@ class StatusController extends Controller
 
      }// End Method 
 
-      //   Waitting For Delivered                 
+                                                                 //   Waitting For Delivered                 
 
-      public function WaittingDelivered(){
+                                                                 //  public function WaittingDelivered(){
 
-          $waittngDeliver = ClearanceDocument::with('psstation')->where('status','WaitDelivery')->orderBy('id','DESC')->get();
- 
-          return view('backend.status.watting_for_deliver',compact('waittngDeliver'));
+                                                                 //      $waittngDeliver = ClearanceDocument::with('psstation')->where('status','WaitDelivery')->orderBy('id','DESC')->get();
+                                                            
+                                                                 //      return view('backend.status.watting_for_deliver',compact('waittngDeliver'));
 
-     }// End Method 
+                                                                 // }// End Method 
 
 
        //    DOCUMENT Delivered                 
@@ -150,7 +151,7 @@ class StatusController extends Controller
      //Received I/O
 
      public function ReceivedIo($id){
-          $dateri = Carbon::now();
+          $dateri = Carbon::now()->format('M d Y');
           ClearanceDocument::findOrFail($id)->update([
                'status' => 'ReceivedIO',           
                'io_rece_date' => $dateri,
@@ -170,7 +171,7 @@ class StatusController extends Controller
      //Received PS
 
      public function ReceivedPs($id){
-          $daterp = Carbon::now();
+          $daterp = Carbon::now()->format('M d Y');
           ClearanceDocument::findOrFail($id)->update([
                'status' => 'ReceivedPS',
                'io_sub_date' => $daterp,
@@ -189,7 +190,7 @@ class StatusController extends Controller
      //Send DSB 
 
      public function PSendDsb($id){
-          $pddate = Carbon::now();
+          $pddate = Carbon::now()->format('M d Y');
           ClearanceDocument::findOrFail($id)->update([
                'status' => 'SendDSB',
                'dsb_send_date' => $pddate,
@@ -209,7 +210,7 @@ class StatusController extends Controller
      // DSB Received
 
      public function RecievedDsb($id){
-          $rpdata = Carbon::now();
+          $rpdata = Carbon::now()->format('M d Y');
           ClearanceDocument::findOrFail($id)->update([
                'status' => 'ReceivedDSB',
                'dsb_rece_date' => $rpdata,
@@ -225,29 +226,29 @@ class StatusController extends Controller
 
      } //end Method 
 
-     // WAITTING FOR SP SIGN  
+                                             // WAITTING FOR SP SIGN  
 
-     public function WitSP($id){
-          $wsdate = Carbon::now();
-          ClearanceDocument::findOrFail($id)->update([
-               'status' => 'WaitSPsign',
-               'wait_sign_date' => $wsdate,
-           ]);
+                                             // public function WitSP($id){
+                                             //      $wsdate = Carbon::now()->format('M d Y');
+                                             //      ClearanceDocument::findOrFail($id)->update([
+                                             //           'status' => 'WaitSPsign',
+                                             //           'wait_sign_date' => $wsdate,
+                                             //       ]);
 
 
-          $notification = array(
-               'message' => ' Successfully Document Waitting For SP Sir Sign',
-               'alert-type' => 'success'
-           );
-       
-           return redirect()->route('dsb.rece.docs')->with($notification);  
+                                             //      $notification = array(
+                                             //           'message' => ' Successfully Document Waitting For SP Sir Sign',
+                                             //           'alert-type' => 'success'
+                                             //       );
+                                             
+                                             //       return redirect()->route('dsb.rece.docs')->with($notification);  
 
-     } //end Method 
+                                             // } //end Method 
 
       // WAITTING FOR SP SIGN OK 
 
       public function SPSignOk($id){
-          $sdate = Carbon::now();
+          $sdate = Carbon::now()->format('M d Y');
           ClearanceDocument::findOrFail($id)->update([
                'status' => 'SPsigned',
                'sp_sign_date' => $sdate,
@@ -259,14 +260,14 @@ class StatusController extends Controller
                'alert-type' => 'success'
            );
        
-           return redirect()->route('wait.sp.sign')->with($notification);  
+           return redirect()->route('dsb.rece.docs')->with($notification);  
 
      } //end Method 
 
        // DOCS SEND TO MOFA  
 
        public function SendDocsMofa($id){
-          $sddate = Carbon::now();
+          $sddate = Carbon::now()->format('M d Y');
           ClearanceDocument::findOrFail($id)->update([
                'status' => 'SendMOFA',
                'mofa_send_date' => $sddate,
@@ -285,7 +286,7 @@ class StatusController extends Controller
        // DOCS RECEIVED FROM MOFA  
 
        public function DocsReceivedFromMofa($id){
-          $rfmdate = Carbon::now();
+          $rfmdate = Carbon::now()->format('M d Y');
           ClearanceDocument::findOrFail($id)->update([
                'status' => 'ReceivedDeliverySec',
                'deliv_sec_rece_date' => $rfmdate,
@@ -301,29 +302,29 @@ class StatusController extends Controller
 
      } //end Method 
 
-     // WAITTING FOR DELIVERY  
+                                   // WAITTING FOR DELIVERY  
 
-     public function WaittingForDelivery($id){
-          $wdate = Carbon::now();
-          ClearanceDocument::findOrFail($id)->update([
-               'status' => 'WaitDelivery',
-               'wait_deliv_date' => $wdate,
-           ]);
+                                   // public function WaittingForDelivery($id){
+                                   //      $wdate = Carbon::now()->format('M d Y');
+                                   //      ClearanceDocument::findOrFail($id)->update([
+                                   //           'status' => 'WaitDelivery',
+                                   //           'wait_deliv_date' => $wdate,
+                                   //       ]);
 
 
-          $notification = array(
-               'message' => ' Successfully DOCS WAITTING FOR DELIVERY .',
-               'alert-type' => 'success'
-           );
-       
-           return redirect()->route('received.from.mofa')->with($notification);  
+                                   //      $notification = array(
+                                   //           'message' => ' Successfully DOCS WAITTING FOR DELIVERY .',
+                                   //           'alert-type' => 'success'
+                                   //       );
+                                   
+                                   //       return redirect()->route('received.from.mofa')->with($notification);  
 
-     } //end Method 
+                                   // } //end Method 
 
       // DOCUMENT DELIVERY  
 
       public function DocumentDelivered($id){
-          $ddate = Carbon::now();
+          $ddate = Carbon::now()->format('M d Y');
           ClearanceDocument::findOrFail($id)->update([
                'status' => 'Delivered',
                'delivered_date' => $ddate,
@@ -335,7 +336,7 @@ class StatusController extends Controller
                'alert-type' => 'success'
            );
        
-           return redirect()->route('waitting.delivered')->with($notification);  
+           return redirect()->route('received.from.mofa')->with($notification);  
 
      } //end Method 
 

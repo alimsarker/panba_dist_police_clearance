@@ -136,11 +136,11 @@ Route::get('/docs/received/io/{id}',[StatusController::class, 'ReceivedIo'])->na
 Route::get('/docs/received/ps/{id}',[StatusController::class, 'ReceivedPs'])->name('io.received.ps');
 Route::get('/docs/send/dsb/{id}',[StatusController::class, 'PSendDsb'])->name('ps.received.io');
 Route::get('/docs/received/dsb/{id}',[StatusController::class, 'RecievedDsb'])->name('ps.send.deb');
-Route::get('/docs/waitting/sp/{id}',[StatusController::class, 'WitSP'])->name('waitting.sp.sign');
+// Route::get('/docs/waitting/sp/{id}',[StatusController::class, 'WitSP'])->name('waitting.sp.sign');
 Route::get('/docs/sp/ok/{id}',[StatusController::class, 'SPSignOk'])->name('sp.sign.done');
 Route::get('/docs/send/mofa/{id}',[StatusController::class, 'SendDocsMofa'])->name('send.docs.mofa');
 Route::get('/docs/received/from/mofa/{id}',[StatusController::class, 'DocsReceivedFromMofa'])->name('docs.received.from.mofa');
-Route::get('/docs/wait/for/delivery/{id}',[StatusController::class, 'WaittingForDelivery'])->name('wait.for.delivery');
+// Route::get('/docs/wait/for/delivery/{id}',[StatusController::class, 'WaittingForDelivery'])->name('wait.for.delivery');
 Route::get('/docs/delivered/{id}',[StatusController::class, 'DocumentDelivered'])->name('document.delivered');
 
 

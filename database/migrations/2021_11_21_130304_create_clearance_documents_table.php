@@ -37,16 +37,16 @@ class CreateClearanceDocumentsTable extends Migration
             $table->string('entry_person_mobile')->nullable();
                    
             $table->string('status')->nullable();
-            $table->string('io_rece_date')->nullable();
-            $table->string('io_sub_date')->nullable();
-            $table->string('dsb_send_date')->nullable();
-            $table->string('dsb_rece_date')->nullable();
-            $table->string('wait_sign_date')->nullable();
-            $table->string('sp_sign_date')->nullable();
-            $table->string('mofa_send_date')->nullable();
-            $table->string('deliv_sec_rece_date')->nullable();
-            $table->string('wait_deliv_date')->nullable();
-            $table->string('delivered_date')->nullable();
+            $table->string('io_rece_date')->default('0')->nullable();
+            $table->string('io_sub_date')->default('0')->nullable();
+            $table->string('dsb_send_date')->default('0')->nullable();
+            $table->string('dsb_rece_date')->default('0')->nullable();
+            // $table->string('wait_sign_date')->default('0')->nullable();
+            $table->string('sp_sign_date')->default('0')->nullable();
+            $table->string('mofa_send_date')->default('0')->nullable();
+            $table->string('deliv_sec_rece_date')->default('0')->nullable();
+            // $table->string('wait_deliv_date')->default('0')->nullable();
+            $table->string('delivered_date')->default('0')->nullable();
             $table->timestamp('created_date')->nullable();
             $table->timestamp('updated_date')->nullable();
         });

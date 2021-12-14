@@ -156,37 +156,7 @@
 
   });
 
-    //  WAITTING FOR SIGN
-
-  
-    $(function(){
-        $(document).on('click','#waittingspsign',function(e){
-          e.preventDefault();
-          var link = $(this).attr("href");
     
-    
-              Swal.fire({
-                title: 'Are you sure The docs Waitting for SP Sir Sign?',
-                text: "You are not able to Pending this Data Again!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, Waitting for SP Sir Sign!'
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  window.location.href = link
-                  Swal.fire(
-                    'Waitting for SP Sir Sign!',
-                    'Your file has been Waitting for SP Sir Sign.',
-                    'success'
-                  )
-                }
-              })
-    
-        })
-    
-      });
 
        //  SP SIR SIGN OK   
 
@@ -284,37 +254,7 @@
     
       });
 
-          //  WAITTING FOR DELIVERY    
           
-  
-    $(function(){
-        $(document).on('click','#waitfordeliver',function(e){
-          e.preventDefault();
-          var link = $(this).attr("href");
-    
-    
-              Swal.fire({
-                title: 'Are you sure The docs  WAITTING FOR DELIVERY ?',
-                text: "You are not able to Pending this Data Again!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, Docs WAITTING FOR DELIVERY !'
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  window.location.href = link
-                  Swal.fire(
-                    'Docs WAITTING FOR DELIVERY !',
-                    'Your file has been WAITTING FOR DELIVERY.',
-                    'success'
-                  )
-                }
-              })
-    
-        })
-    
-      });
 
         //  DOCUMENT DELIVERED    
         

@@ -177,18 +177,23 @@ p {
             </div>
             <article class="card">
                 <div class="card-body row">
-                    <div class="col"> <strong>PS Entry Date:</strong> <br>{{ date('d-m-Y',strtotime($track->created_date)) }} </div>
-                    <div class="col"> <strong>Received IO Date:</strong> <br>{{ date('d-m-Y',strtotime($track->io_rece_date)) }} </div>
-                    <div class="col"> <strong>Received PS Date:</strong> <br>{{ date('d-m-Y',strtotime($track->io_sub_date)) }} </div>
-                    <div class="col"> <strong>Send DSB Date:</strong> <br>{{ date('d-m-Y',strtotime($track->dsb_send_date)) }} </div>
-                    <div class="col"> <strong>Received DSB Date:</strong> <br>{{ date('d-m-Y',strtotime($track->dsb_rece_date)) }} </div>
-                    <div class="col"> <strong></strong> <br> </div>
-                    <div class="col"> <strong>SP Signed Date:</strong> <br>{{ date('d-m-Y',strtotime($track->sp_sign_date)) }} </div>
-                    <div class="col"> <strong>Send MOFA Date:</strong> <br>{{ date('d-m-Y',strtotime($track->mofa_send_date)) }} </div>
-                    <div class="col"> <strong>Received Contrl Date:</strong> <br>{{ date('d-m-Y',strtotime($track->deliv_sec_rece_date)) }} </div>
-                    <div class="col"> <strong></strong> <br></div>
-                    <div class="col"> <strong>Delivered Date:</strong> <br>{{ date('d-m-Y',strtotime($track->delivered_date)) }} </div>
+                       
+                    <div class="col"> <strong>PS Entry Date:</strong> <br>{{ $track->created_date }} </div>
                  
+                
+                    <div class="col"> <strong>Received IO Date:</strong> <br>{{ $track->io_rece_date }} </div>
+               
+                    <div class="col"> <strong>Received PS Date:</strong> <br>{{ $track->io_sub_date }} </div>
+                   
+                    <div class="col"> <strong>Send DSB Date:</strong> <br>{{ $track->dsb_send_date }} </div>
+                    <div class="col"> <strong>Received DSB Date:</strong> <br>{{ $track->dsb_rece_date }} </div>
+                    <div class="col"> <strong></strong> <br> </div>
+                    <div class="col"> <strong>SP Signed Date:</strong> <br>{{ $track->sp_sign_date }} </div>
+                    <div class="col"> <strong>Send MOFA Date:</strong> <br>{{ $track->mofa_send_date }} </div>
+                    <div class="col"> <strong>Received Contrl Date:</strong> <br>{{ $track->deliv_sec_rece_date }} </div>
+                    <div class="col"> <strong></strong> <br></div>
+                    <div class="col"> <strong>Delivered Date:</strong> <br>{{ $track->delivered_date }} </div>
+                  
                 </div>
             </article>
             <div class="track">

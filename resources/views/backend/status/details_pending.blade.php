@@ -117,8 +117,10 @@
                <th>  
                  @if($pendingDataclearance->status == 'Pending')
 
-                  <a href="{{ route('pending.received.io',$pendingDataclearance->id) }}" class="btn btn-block btn-success" id="receivedio">Received I/O</a>
+                  <a href="{{ route('pending.received.io',$pendingDataclearance->id) }}" class="btn btn-block btn-success sms" id="receivedio">Received I/O</a>
                   
+                @include('admin.layouts.sms_applicant_first')
+
                  @elseif($pendingDataclearance->status == 'ReceivedIO')
   <a href="{{ route('io.received.ps',$pendingDataclearance->id) }}" class="btn btn-block btn-success" id="receivedFromio">PS Received From I/O</a>
   @elseif($pendingDataclearance->status == 'ReceivedPS')
@@ -126,17 +128,20 @@
   @elseif($pendingDataclearance->status == 'SendDSB')
   <a href="{{ route('ps.send.deb',$pendingDataclearance->id) }}" class="btn btn-block btn-success" id="receiveddsb">DSB Received PS</a>
   @elseif($pendingDataclearance->status == 'ReceivedDSB')
-  <a href="{{ route('waitting.sp.sign',$pendingDataclearance->id) }}" class="btn btn-block btn-success" id="waittingspsign">WaitSingSP</a>
-  @elseif($pendingDataclearance->status == 'WaitSPsign')
+  
   <a href="{{ route('sp.sign.done',$pendingDataclearance->id) }}" class="btn btn-block btn-success" id="spsignok">SPsignDone</a>
   @elseif($pendingDataclearance->status == 'SPsigned')
   <a href="{{ route('send.docs.mofa',$pendingDataclearance->id) }}" class="btn btn-block btn-success" id="sendtomofa">SendToMOFA</a>
   @elseif($pendingDataclearance->status == 'SendMOFA')
-  <a href="{{ route('docs.received.from.mofa',$pendingDataclearance->id) }}" class="btn btn-block btn-success" id="receiveFrommofa">ReceiFromMOFA</a>
+  <a href="{{ route('docs.received.from.mofa',$pendingDataclearance->id) }}" class="btn btn-block btn-success waitdelivery" id="receiveFrommofa">ReceiFromMOFA</a>
+  
+  @include('admin.layouts.sms_applicant_last')
+  
   @elseif($pendingDataclearance->status == 'ReceivedDeliverySec')
-  <a href="{{ route('wait.for.delivery',$pendingDataclearance->id) }}" class="btn btn-block btn-success" id="waitfordeliver">WaittingForDelivery</a>
-  @elseif($pendingDataclearance->status == 'WaitDelivery')
-  <a href="{{ route('document.delivered',$pendingDataclearance->id) }}" class="btn btn-block btn-success" id="docsdelivered">DocsDelivered</a>
+  
+
+  
+  <a href="{{ route('document.delivered',$pendingDataclearance->id) }}" class="btn btn-block btn-success " id="docsdelivered">DocsDelivered</a>
  
   
                 
@@ -158,7 +163,8 @@
 		</section>
 		<!-- /.content -->
 
-	
+   
+
 
 
 

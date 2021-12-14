@@ -198,12 +198,12 @@
                        </div>
                     
                    
-                 
+                       
                    
                      
                 
                         <div style="float: right;" class="text-xs-right">
-                            <input type="submit" class="btn btn-rounded btn-info" value="Submit">
+                            <input type="submit" class="btn btn-rounded btn-info"  value="Submit">
                         </div>
                     </div>
                </div>
@@ -256,7 +256,7 @@
         success:function(data){
           var html = '<option value="">Select IO Mobile No</option>';
           $.each( data, function(key, v) {
-            html += '<option value="'+v.id+'">'+v.assign_officer_cell+'</option>';
+            html += '<option value="'+v.assign_officer_cell+'">'+v.assign_officer_cell+'</option>';
           });
           $('#assign_officer_cell').html(html);
         }
@@ -268,5 +268,10 @@
 
 
 </script>
+
+
+
+
+
 
 @endsection

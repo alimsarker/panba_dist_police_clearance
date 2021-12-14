@@ -197,6 +197,8 @@ class UserController extends Controller
 
 
         public function AplicantClearanceTrack(Request $request){
+
+                
                 $applicantTrac = $request->mobile;
                 $track = ClearanceDocument::where('mobile_no',$applicantTrac)->first();
 

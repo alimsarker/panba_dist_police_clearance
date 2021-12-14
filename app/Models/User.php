@@ -62,5 +62,6 @@ class User extends Authenticatable
     const CREATED_AT = 'created_date';
     const UPDATED_AT = 'updated_date'; 
 
-   
+    
+
 }

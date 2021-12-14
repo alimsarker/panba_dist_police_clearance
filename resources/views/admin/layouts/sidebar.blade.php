@@ -101,14 +101,12 @@ $route = Route::current()->getName();
           <ul class="treeview-menu">
             <li class="{{ ($route == 'clearance.pending.view') ? 'active' : '' }}"><a href="{{ route('clearance.pending.view') }}"><i class="ti-more"></i>Pending Clearance View</a></li>
             <li class="{{ ($route == 'clearance.docs.received.io') ? 'active' : '' }}"><a href="{{ route('clearance.docs.received.io') }}"><i class="ti-more"></i>I/O Received Docs</a></li>
-            <li class="{{ ($route == 'io.docs.submit.ps') ? 'active' : '' }}"><a href="{{ route('io.docs.submit.ps') }}"><i class="ti-more"></i>I/O Submit Docs PS</a></li>
+            <li class="{{ ($route == 'io.docs.submit.ps') ? 'active' : '' }}"><a href="{{ route('io.docs.submit.ps') }}"><i class="ti-more"></i>PS Received Docs I/O</a></li>
             <li class="{{ ($route == 'ps.send.dsb') ? 'active' : '' }}"><a href="{{ route('ps.send.dsb') }}"><i class="ti-more"></i> PS Send DSB</a></li>
-            <li class="{{ ($route == 'dsb.rece.docs') ? 'active' : '' }}"><a href="{{ route('dsb.rece.docs') }}"><i class="ti-more"></i> DSB Received Docs</a></li>
-            <li class="{{ ($route == 'wait.sp.sign') ? 'active' : '' }}"><a href="{{ route('wait.sp.sign') }}"><i class="ti-more"></i> Waitting For SP Sign</a></li>
+            <li class="{{ ($route == 'dsb.rece.docs') ? 'active' : '' }}"><a href="{{ route('dsb.rece.docs') }}"><i class="ti-more"></i> DSB Received PS</a></li>
             <li class="{{ ($route == 'sp.sign.ok') ? 'active' : '' }}"><a href="{{ route('sp.sign.ok') }}"><i class="ti-more"></i>  SP Signed</a></li>
             <li class="{{ ($route == 'send.mofa') ? 'active' : '' }}"><a href="{{ route('send.mofa') }}"><i class="ti-more"></i>  send To MOFA</a></li>
             <li class="{{ ($route == 'received.from.mofa') ? 'active' : '' }}"><a href="{{ route('received.from.mofa') }}"><i class="ti-more"></i>  Received From MOFA</a></li>
-            <li class="{{ ($route == 'waitting.delivered') ? 'active' : '' }}"><a href="{{ route('waitting.delivered') }}"><i class="ti-more"></i>  Watting For Delivered</a></li>
             <li class="{{ ($route == 'docs.delivered') ? 'active' : '' }}"><a href="{{ route('docs.delivered') }}"><i class="ti-more"></i> Document Delivered</a></li>
           </ul>
         </li> 
